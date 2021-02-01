@@ -496,6 +496,12 @@ height: auto; }
   }
 }
 
+@media screen and (max-height:900px) {
+  #mouse-scroll {
+    display: none;
+  }
+}
+
 
   #mouse-scroll {
     position: absolute;
