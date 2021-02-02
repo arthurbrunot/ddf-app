@@ -14,13 +14,14 @@ p {
 
 body {
     background: url('../../img/background.jpg');
-    background-size: cover;
+    background-size: contain;
+    background-repeat: repeat;
 }
 
 @media screen and (max-width:1000px) {
   body {
     background: url('../../img/background.jpg');
-    background-size: initial;
+    background-size: contain;
     background-repeat: repeat;
 }
 }
@@ -35,6 +36,7 @@ body {
 
     .fp-tableCell {
         display: flex;
+        min-height: 100vh;
         flex-direction: column;
         align-items: center;
         justify-content: center;
@@ -42,9 +44,9 @@ body {
     }
 }
 
-#section1, #section2, #section3, #section4, #section5 {
+#section1, #section2, #section3, #section4, #section5, #section6 {
   .fp-tableCell {
-      padding: 50px 0px !important;
+      padding: 50px 0px 250px 0px ;
       justify-content: flex-start;
   }
 
@@ -58,10 +60,20 @@ body {
   }
 }
 
+#section2 { 
+  .fp-tableCell {
+    padding: 50px 0px !important;
+    justify-content: center;
+}
+}
+
+
 @media screen and (max-width:1000px) {
   .fp-tableCell {
-    padding: 50px 0px;
+    padding: 50px 0px !important;
     height: auto;
+    border-bottom: 3px solid white;
+    border-radius: 30px;
 }
 }
 
@@ -72,7 +84,7 @@ body {
 .heading {
     color: white;
     text-align: center;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 
     &.alt {
       margin-bottom: 50px;
@@ -81,21 +93,67 @@ body {
         font-size: 30px;
         line-height: 1.5;
         padding: 20px;
-        padding-bottom: 10px;
+        max-width: 1000px;
+        margin: 0 auto;
+        padding-bottom: 30px;
     }
     h2 {
       width: 100%;
+      margin: 0 auto;
       max-width: 1000px;
+      font-size: 18px;
+      line-height: 1.6;
       padding: 20px;
     }
     .logo {
       width: 100%;
       padding: 20px;
-      max-width: 600px;
+      max-width: 550px;
       margin: 0 auto;
-      margin-bottom: 50px;
+      margin-bottom: 10px;
       filter: drop-shadow(5px 5px 30px rgba(0,0,0,0.3));
     }
+
+    .calltoaction {
+      padding: 12px 20px;
+      background-color:#0F3742;
+      margin-top: 20px;
+      color: white;
+      text-decoration: none;
+      border-radius: 3px;
+    }
+}
+
+
+@media screen and (max-width:1000px) {
+  h1 {
+    font-size: 24px !important;
+    margin: 40px 0px !important;
+}
+  .calltoaction {
+
+    font-size: 12px;
+
+  }
+}
+
+@media screen and (max-width:1000px) {
+  #section2,#section3,#section4,#section5,#section6 {
+    .heading {
+      &.alt {
+        margin-top: 0px !important;
+      }
+    }
+
+    h1 {
+      font-size: 40px !important;
+      margin: 0px 0px 0px 0px !important;
+  }
+  h2 {
+    margin: 40px 0px 0px 0px !important;
+}
+  }
+
 }
 
 // CARDS //
@@ -195,23 +253,26 @@ body {
     width: 100%; }
   
   .cards_ .cards___card .card__text h3 {
-    font-size: 22px !important;
+    font-size: 25px !important;
     font-family: Poppins !important;
     line-height: 25px !important;
-    color: #0d3742 !important;
+    color: white !important;
     margin-bottom: 15px !important;}
   
   .cards_ .cards___card .card__text hr {
-    width: 20px !important;
+    width: 50px !important;
     height: 2px !important;
-    background-color: #68004f !important;
-    border-radius: 5px !important; }
+    margin: 0 auto;
+    margin-bottom: 20px;
+    background-color: white !important;
+    border-radius: 5px !important;
+  border: none; }
   
   .cards_ .cards___card .card__text h4 {
-    font-size: 18px !important;
+    font-size: 21px !important;
     font-family: 'Nunito sans' !important;
     font-weight: 400;
-    line-height: 18px !important;
+    line-height: 28px !important;
     color: #08242b !important; }
   
   .cards_ .cards___card .card__text p {
@@ -256,6 +317,10 @@ body {
 .cards___card {
   margin-bottom: 50px;
   display: flex;
+
+  &:last-of-type {
+    margin-bottom: 0px;
+  }
 }
   .cards___card .card__image {
     margin-bottom: 30px !important;
@@ -340,51 +405,6 @@ height: auto; }
 }
 
 
-// FULLPAGE CSS //
-
-#fp-nav ul li a span, .fp-slidesNav ul li a span {
-    background: white !important;
-    height: 10px !important;
-    width: 10px;
-    margin: -5px 0 0 -5px;
-}
-
-#fp-nav ul li a.active span, .fp-slidesNav ul li a.active span, #fp-nav ul li:hover a.active span, .fp-slidesNav ul li:hover a.active span {
-    background: white !important;
-    height: 20px !important;
-    width: 20px;
-    margin: -10px 0 0 -10px;
-}
-
-#fp-nav li {
-    padding: 10px;
-}
-
-#fp-nav ul li .fp-tooltip.fp-right {
-    right: 40px;
-    font-size: 21px;
-}
-
-#fp-nav ul li .fp-tooltip {
-    top: 4px;
-}
-
-@media screen and (max-width: 1300px) {
-  #fp-nav ul li .fp-tooltip {
-    display: none;
-}
-
-
-
-}
-
-@media screen and (max-width: 1100px) {
-  #fp-nav  {
-    display: none !important;
-}
-
-}
-
 
 // SECOND SECTION // 
 
@@ -462,6 +482,25 @@ height: auto; }
   
 }
 
+#section5 {
+  .scaled-frame {
+    width: 120%;
+    height: 120%;
+    transform-origin: top left;
+    transform: scale(calc(100/120));
+    position: absolute;
+    border: 0px;
+    left: 0%;
+    top: 0%;
+    z-index: 10;
+    border-radius: 10px;
+
+    &.f3 > * {
+      zoom: 2;
+    }
+  }
+}
+
 @media screen and (max-width:1000px) {
   .container {
     width: 80%;
@@ -484,6 +523,25 @@ height: auto; }
         }
       }
   }
+}
+
+// SECTION 6 //
+
+.container .content {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.02),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.028),
+  0 12.5px 10px rgba(0, 0, 0, 0.035),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.042),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.05),
+  0 100px 80px rgba(0, 0, 0, 0.07)
+;
+padding: 30px;
+color: #0f3742;
+font-weight: 400;
+font-size: 18px;
 }
 
 
@@ -605,3 +663,48 @@ height: auto; }
     }
   }
   
+
+  // FULLPAGE CSS //
+
+#fp-nav ul li a span, .fp-slidesNav ul li a span {
+  background: white !important;
+  height: 10px !important;
+  width: 10px;
+  margin: -5px 0 0 -5px;
+}
+
+#fp-nav ul li a.active span, .fp-slidesNav ul li a.active span, #fp-nav ul li:hover a.active span, .fp-slidesNav ul li:hover a.active span {
+  background: white !important;
+  height: 20px !important;
+  width: 20px;
+  margin: -10px 0 0 -10px;
+}
+
+#fp-nav li {
+  padding: 10px;
+}
+
+#fp-nav ul li .fp-tooltip.fp-right {
+  right: 40px;
+  font-size: 21px;
+}
+
+#fp-nav ul li .fp-tooltip {
+  top: 4px;
+}
+
+@media screen and (max-width: 1300px) {
+#fp-nav ul li .fp-tooltip {
+  display: none;
+}
+
+
+
+}
+
+@media screen and (max-width: 1100px) {
+#fp-nav  {
+  display: none !important;
+}
+
+}
