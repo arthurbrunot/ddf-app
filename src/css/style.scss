@@ -14,17 +14,11 @@ p {
 
 body {
     background: url('../../img/background.jpg');
-    background-size: contain;
+    background-size: cover;
+    background-attachment: fixed;
     background-repeat: repeat;
 }
 
-@media screen and (max-width:1000px) {
-  body {
-    background: url('../../img/background.jpg');
-    background-size: contain;
-    background-repeat: repeat;
-}
-}
 
 .section {
     max-width: 1200px;
